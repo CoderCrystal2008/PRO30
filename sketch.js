@@ -4,6 +4,8 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
 
+var gameState = "onsling";
+
 
 
 function setup() {
@@ -41,7 +43,7 @@ function setup() {
   box13 = new WhiteBox (580,110,50,50);
 
   //creates the polygon
-  polygon = new Polygon (100,100,50);
+  polygon = new Polygon (100,100,30);
 
   //creates the sling
   sling = new SlingShot (polygon.body,{x: 100, y: 200});
@@ -88,18 +90,18 @@ function draw() {
 
 function mouseDragged(){
   if (gameState!=="launched"){
-      Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+      Matter.Body.setPosition(polygon.body, {x: mouseX , y: mouseY});
   }
 }
 
 
 function mouseReleased(){
-  slingshot.fly();
+  sling.fly();
   gameState = "launched";
 }
 
 function keyPressed(){
   if(keyCode === 32){
-     // slingshot.attach(bird.body);
+      sling.attach(polygon.body);
   }
 }

@@ -1,7 +1,7 @@
 class Polygon {
     constructor(x,y,radius){
         var options = {
-            'isStatic':true,
+            'isStatic':false,
             'restitution':0.3
         }
         this.body = Bodies.circle(x,y,radius,options);
@@ -16,7 +16,7 @@ class Polygon {
         fill("purple");
         stroke("silver");
         strokeWeight(4);
-        ellipseMode(CENTER);
+        ellipseMode(RADIUS);
         ellipse(0,0,this.radius,this.radius);
         pop();
     }
