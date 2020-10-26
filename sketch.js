@@ -4,7 +4,11 @@ const Bodies = Matter.Bodies;
 const Body = Matter.Body;
 const Constraint = Matter.Constraint;
 
+//creates the game state
 var gameState = "onsling";
+
+//creates the visibility
+var visibility;
 
 
 
@@ -48,7 +52,7 @@ function setup() {
   //creates the sling
   sling = new SlingShot (polygon.body,{x: 100, y: 200});
 
-
+  
 
   
   Engine.run(engine);
@@ -62,6 +66,8 @@ function draw() {
   
 
   //displays the boxes
+
+  
   box1.display();
   box2.display();
   box3.display();
